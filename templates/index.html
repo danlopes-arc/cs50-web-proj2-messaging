@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="app" class="container-lg p-0 d-flex flex-column bg-light">
+  <header>
+    <nav id="header" class="navbar navbar-light bg-white">
+      <div class="navbar-brand">
+        <img
+          src="/static/img/logo.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top mr-2"
+          alt="Logo"
+        />
+        Messaging
+      </div>
+      <div id="header-toolbar">
+        <button id="new-channel" class="btn btn-outline-primary mr-2" type="submit"><i id="new-channel-icon" class="fas fa-comments mr-2"></i><span id="new-channel-text">New Channel</span></button>
+        <i class="fas fa-user"></i>
+        <span id="username">name</span>
+      </div>
+    </nav>
+  </header>
+  <div id="content" class="row no-gutters flex-grow-1 position-relative">
+    <aside id="sidebar" class="col-6 col-sm-5 col-md-4 d-flex flex-column bg-light">
+      <div class="navbar bar-header bg-light">
+        <input id="search-channels" class="form-control search input-placeholder" type="search" placeholder="Search for channel" aria-label="Search">
+      </div>
+      <div id="channels" class="flex-grow-1 p-2">
+        
+      </div>
+    </aside>
+    <main id="chatbar" class="col-6 col-sm-7 col-md-8 d-flex flex-column">
+      <div class="navbar bar-header bg-light">
+        <span id="channel-title"></span>
+      </div>
+      <div id="message-area" class="flex-grow-1 pt-2">
+        
+      </div>
+      <div id="text-bar" class="navbar bg-light">
+        <input id="message-input" class="form-control input-placeholder" type="text" placeholder="Type a message">
+      </div>
+    </main>
+  </div>
+</div>
+{% endblock content %}

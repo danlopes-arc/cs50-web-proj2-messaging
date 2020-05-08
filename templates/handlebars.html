@@ -1,0 +1,72 @@
+{% raw %}
+
+<script id="h-login" type="text/x-handlebars-template">
+  <form id="form-login" class="form-prompt">
+    <h1 class="h3 mb-4 font-weight-normal">
+      Register
+    </h1>
+    <div class="form-group">
+      <label for="input-username" class="sr-only">
+        Username
+      </label>
+      <input
+        type="text"
+        id="input-username"
+        name="username"
+        class="form-control"
+        placeholder="Username"
+        autofocus
+      />
+      <small id="error-username" hidden class="error form-text text-danger">
+        Username already exists
+      </small>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Log In
+    </button>
+  </form>
+</script>
+
+<script id="h-new-channel" type="text/x-handlebars-template">
+  <form id="form-new-channel" class="form-prompt">
+    <h1 class="h3 mb-4 font-weight-normal">
+      New Channel
+    </h1>
+    <div class="form-group">
+      <label for="input-username" class="sr-only">
+        Channel Name
+      </label>
+      <input
+        type="text"
+        id="input-channel-name"
+        name="channel-name"
+        class="form-control"
+        placeholder="Channel Name"
+        autofocus
+      />
+      <small id="error-channel-name" hidden class="error form-text text-danger">
+        Channel already exists
+      </small>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Create
+    </button>
+  </form>
+</script>
+
+<script id="h-channel" type="text/x-handlebars-template">
+  <div class="channel navbar mb-2 bg-white">
+    <span class="channel-name">{{ channelName }}</span>
+  </div>
+</script>
+
+<script id="h-message-box" type="text/x-handlebars-template">
+  <div class="message-box px-3 mb-2">
+    <div class="message-bubble {{ messageMine }} p-2 pb-3 position-relative">
+      <span class="message-username d-block text-muted">{{ username }}</span>
+      <span class="message-text d-block">{{ text }}</span>
+      <span class="message-time">{{ time }}</span>
+    </div>
+  </div>
+</script>
+{% endraw %}
