@@ -183,8 +183,8 @@ function openChannel(channelName) {
           return
         }
         if (e.keyCode === 13) {
-          // sendMessage(text)
-          emitMessage(text)
+          sendMessage(text)
+          // emitMessage(text)
           e.target.value = ""
         }
       }
@@ -240,7 +240,7 @@ function sendMessage(text) {
       if (!resp.success) {
         return
       }
-      openChannel(localStorage.getItem("channel"))
+      // openChannel(localStorage.getItem("channel"))
     }
 
     const data = new FormData()

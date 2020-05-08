@@ -79,14 +79,15 @@ def send():
   if text == "" or not username in users:
     return jsonify({"success": False})
   
-  for channel in channels:
-    if channel.name == channel_name:
-      channel.messages.append(
-        Message(
+  msg = Message(
           username,
           text,
           EasyDateTime(date_time=datetime.datetime.now()))
-      )
+
+  for channel in channels:
+    if channel.name == channel_name:
+      channel.messages.append(msg)
+      socketio.emit("newMessage", {"channel":channel.name, "message": dictify(msg)}, broadcast=True)
       return jsonify({"success": True})
   return jsonify({"success": False})
 
@@ -109,4 +110,6 @@ def message_sent(data):
       channel.messages.append(msg)
         
       emit("newMessage", {"channel":channel.name, "message": dictify(msg)}, broadcast=True)
-      
+
+# if __name__ == '__main__':
+#     socketio.run(app, host="0.0.0.0", port=8080, debug=True)
