@@ -111,5 +111,6 @@ def message_sent(data):
         
       emit("newMessage", {"channel":channel.name, "message": dictify(msg)}, broadcast=True)
 
-# if __name__ == '__main__':
-#     socketio.run(app, host="0.0.0.0", port=8080, debug=True)
+if __name__ == '__main__':
+    # socketio.run(app, host="0.0.0.0", port=8080, debug=True)
+    socketio.run(app)
